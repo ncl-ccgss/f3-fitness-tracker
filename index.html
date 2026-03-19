@@ -1,182 +1,182 @@
-!DOCTYPE html
-html lang=zh-HK
-head
-    meta charset=UTF-8
-    meta name=viewport content=width=device-width, initial-scale=1.0
-    title中三級專屬：我的健身升級之路 🚀title
-    script src=httpscdn.jsdelivr.netnpmchart.jsscript
-    style
-        root {
-            --primary-color #4CAF50;
-            --secondary-color #2196F3;
-            --bg-color #f4f7f6;
-            --text-color #333;
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>中三級專屬：我的健身升級之路 🚀</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        :root {
+            --primary-color: #4CAF50;
+            --secondary-color: #2196F3;
+            --bg-color: #f4f7f6;
+            --text-color: #333;
         }
         body {
-            font-family 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color var(--bg-color);
-            color var(--text-color);
-            line-height 1.6;
-            margin 0;
-            padding 20px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
         }
         .container {
-            max-width 800px;
-            margin auto;
-            background white;
-            padding 20px;
-            border-radius 12px;
-            box-shadow 0 4px 15px rgba(0,0,0,0.1);
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
-        h1, h2 { text-align center; color var(--text-color); }
-        h1 { border-bottom 3px solid var(--primary-color); padding-bottom 10px; }
+        h1, h2 { text-align: center; color: var(--text-color); }
+        h1 { border-bottom: 3px solid var(--primary-color); padding-bottom: 10px; }
         .section {
-            margin-bottom 30px;
-            padding 15px;
-            background #fff;
-            border 1px solid #ddd;
-            border-radius 8px;
+            margin-bottom: 30px;
+            padding: 15px;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
         }
         .form-group {
-            display flex;
-            flex-wrap wrap;
-            gap 10px;
-            margin-bottom 15px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 15px;
         }
         input, select {
-            padding 10px;
-            border 1px solid #ccc;
-            border-radius 5px;
-            flex 1;
-            min-width 120px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            flex: 1;
+            min-width: 120px;
         }
         button {
-            padding 10px 20px;
-            border none;
-            border-radius 5px;
-            color white;
-            font-weight bold;
-            cursor pointer;
-            transition 0.3s;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
         }
-        .btn-workout { background-color var(--primary-color); }
-        .btn-workouthover { background-color #45a049; }
-        .btn-body { background-color var(--secondary-color); }
-        .btn-bodyhover { background-color #1976d2; }
-        .btn-score { background-color #FF9800; width 100%; font-size 1.2em; margin-top 10px;}
-        .btn-scorehover { background-color #e68a00; }
-        .btn-clear { background-color #dc3545; width 100%; margin-top 15px; }
-        .btn-clearhover { background-color #c82333; }
+        .btn-workout { background-color: var(--primary-color); }
+        .btn-workout:hover { background-color: #45a049; }
+        .btn-body { background-color: var(--secondary-color); }
+        .btn-body:hover { background-color: #1976d2; }
+        .btn-score { background-color: #FF9800; width: 100%; font-size: 1.2em; margin-top: 10px;}
+        .btn-score:hover { background-color: #e68a00; }
+        .btn-clear { background-color: #dc3545; width: 100%; margin-top: 15px; }
+        .btn-clear:hover { background-color: #c82333; }
         
         table {
-            width 100%;
-            border-collapse collapse;
-            margin-top 10px;
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
         }
         th, td {
-            padding 12px;
-            text-align center;
-            border-bottom 1px solid #ddd;
+            padding: 12px;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
         }
-        th { background-color #f8f9fa; }
+        th { background-color: #f8f9fa; }
         .score-display {
-            text-align center;
-            font-size 1.5em;
-            font-weight bold;
-            margin-top 20px;
-            padding 20px;
-            border-radius 8px;
-            display none;
+            text-align: center;
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-top: 20px;
+            padding: 20px;
+            border-radius: 8px;
+            display: none;
         }
         .chart-container {
-            position relative;
-            height 300px;
-            width 100%;
-            margin-top 20px;
+            position: relative;
+            height: 300px;
+            width: 100%;
+            margin-top: 20px;
         }
-    style
-head
-body
+    </style>
+</head>
+<body>
 
-div class=container
-    h1🚀 中三級：我的健身升級之路h1
-    p style=text-align center;堅持紀錄，見證自己變強的每一天！💪 (資料已自動保存在你的設備中)p
+<div class="container">
+    <h1>🚀 中三級：我的健身升級之路</h1>
+    <p style="text-align: center;">堅持紀錄，見證自己變強的每一天！💪 (資料已自動保存在你的設備中)</p>
 
-    div class=section id=workout-section
-        h2🏋️‍♂️ 訓練過程紀錄h2
-        div class=form-group
-            input type=date id=w-date required
-            select id=w-exercise
-                option value=掌上壓掌上壓option
-                option value=深蹲深蹲option
-                option value=引體上升引體上升option
-                option value=啞鈴彎舉啞鈴彎舉option
-                option value=平板支撐平板支撐option
-            select
-            input type=number id=w-weight placeholder=重量 (kg)  自身填0 min=0
-            input type=number id=w-reps placeholder=次數秒數 min=1
-            input type=number id=w-sets placeholder=組數 min=1
-            button class=btn-workout onclick=addWorkout()新增訓練button
-        div
-        table
-            thead
-                tr
-                    th日期th
-                    th動作th
-                    th重量(kg)th
-                    th次數秒th
-                    th組數th
-                tr
-            thead
-            tbody id=workout-table-bodytbody
-        table
-    div
+    <div class="section" id="workout-section">
+        <h2>🏋️‍♂️ 訓練過程紀錄</h2>
+        <div class="form-group">
+            <input type="date" id="w-date" required>
+            <select id="w-exercise">
+                <option value="掌上壓">掌上壓</option>
+                <option value="深蹲">深蹲</option>
+                <option value="引體上升">引體上升</option>
+                <option value="啞鈴彎舉">啞鈴彎舉</option>
+                <option value="平板支撐">平板支撐</option>
+            </select>
+            <input type="number" id="w-weight" placeholder="重量 (kg) / 自身填0" min="0">
+            <input type="number" id="w-reps" placeholder="次數/秒數" min="1">
+            <input type="number" id="w-sets" placeholder="組數" min="1">
+            <button class="btn-workout" onclick="addWorkout()">新增訓練</button>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>日期</th>
+                    <th>動作</th>
+                    <th>重量(kg)</th>
+                    <th>次數/秒</th>
+                    <th>組數</th>
+                </tr>
+            </thead>
+            <tbody id="workout-table-body"></tbody>
+        </table>
+    </div>
 
-    div class=section id=body-section
-        h2📏 身型變化紀錄 (肌肉圍度)h2
-        div class=form-group
-            input type=date id=b-date required
-            input type=number id=b-chest placeholder=胸圍 (cm) min=1
-            input type=number id=b-arm placeholder=手臂圍 (cm) min=1
-            input type=number id=b-waist placeholder=腰圍 (cm) min=1
-            input type=number id=b-thigh placeholder=大腿圍 (cm) min=1
-            button class=btn-body onclick=addBodyRecord()新增圍度button
-        div
+    <div class="section" id="body-section">
+        <h2>📏 身型變化紀錄 (肌肉圍度)</h2>
+        <div class="form-group">
+            <input type="date" id="b-date" required>
+            <input type="number" id="b-chest" placeholder="胸圍 (cm)" min="1">
+            <input type="number" id="b-arm" placeholder="手臂圍 (cm)" min="1">
+            <input type="number" id="b-waist" placeholder="腰圍 (cm)" min="1">
+            <input type="number" id="b-thigh" placeholder="大腿圍 (cm)" min="1">
+            <button class="btn-body" onclick="addBodyRecord()">新增圍度</button>
+        </div>
         
-        div class=chart-container
-            canvas id=growthChartcanvas
-        div
+        <div class="chart-container">
+            <canvas id="growthChart"></canvas>
+        </div>
 
-        table
-            thead
-                tr
-                    th日期th
-                    th胸圍 (cm)th
-                    th手臂圍 (cm)th
-                    th腰圍 (cm)th
-                    th大腿圍 (cm)th
-                tr
-            thead
-            tbody id=body-table-bodytbody
-        table
-    div
+        <table>
+            <thead>
+                <tr>
+                    <th>日期</th>
+                    <th>胸圍 (cm)</th>
+                    <th>手臂圍 (cm)</th>
+                    <th>腰圍 (cm)</th>
+                    <th>大腿圍 (cm)</th>
+                </tr>
+            </thead>
+            <tbody id="body-table-body"></tbody>
+        </table>
+    </div>
 
-    div class=section
-        h2🏆 努力值評分系統h2
-        button class=btn-score onclick=calculateScore()結算我的綜合評分！button
-        div id=score-result class=score-displaydiv
+    <div class="section">
+        <h2>🏆 努力值評分系統</h2>
+        <button class="btn-score" onclick="calculateScore()">結算我的綜合評分！</button>
+        <div id="score-result" class="score-display"></div>
         
-        button class=btn-clear onclick=clearData()⚠️ 清除所有紀錄 (重新開始)button
-    div
-div
+        <button class="btn-clear" onclick="clearData()">⚠️ 清除所有紀錄 (重新開始)</button>
+    </div>
+</div>
 
-script
-     初始化數據陣列
-    let workouts = JSON.parse(localStorage.getItem('f3_workouts'))  [];
-    let bodyStats = JSON.parse(localStorage.getItem('f3_bodyStats'))  [];
+<script>
+    // 初始化數據陣列
+    let workouts = JSON.parse(localStorage.getItem('f3_workouts')) || [];
+    let bodyStats = JSON.parse(localStorage.getItem('f3_bodyStats')) || [];
     let growthChart = null;
 
-     網頁載入時執行
+    // 網頁載入時執行
     window.onload = function() {
         document.getElementById('w-date').valueAsDate = new Date();
         document.getElementById('b-date').valueAsDate = new Date();
@@ -187,17 +187,17 @@ script
     function addWorkout() {
         const date = document.getElementById('w-date').value;
         const exercise = document.getElementById('w-exercise').value;
-        const weight = document.getElementById('w-weight').value  0;
+        const weight = document.getElementById('w-weight').value || "0";
         const reps = document.getElementById('w-reps').value;
         const sets = document.getElementById('w-sets').value;
 
-        if(!date  !reps  !sets) {
-            alert(請填寫日期、次數及組數！);
+        if(!date || !reps || !sets) {
+            alert("請填寫日期、次數及組數！");
             return;
         }
 
         workouts.push({ date, exercise, weight, reps, sets });
-        localStorage.setItem('f3_workouts', JSON.stringify(workouts));  儲存到 LocalStorage
+        localStorage.setItem('f3_workouts', JSON.stringify(workouts)); // 儲存到 LocalStorage
         
         document.getElementById('w-reps').value = '';
         document.getElementById('w-sets').value = '';
@@ -213,22 +213,22 @@ script
         const waist = document.getElementById('b-waist').value;
         const thigh = document.getElementById('b-thigh').value;
 
-        if(!date  (!chest && !arm && !waist && !thigh)) {
-            alert(請至少填寫一項圍度數據！);
+        if(!date || (!chest && !arm && !waist && !thigh)) {
+            alert("請至少填寫一項圍度數據！");
             return;
         }
 
         bodyStats.push({ 
             date, 
-            chest chest  null, 
-            arm arm  null, 
-            waist waist  null, 
-            thigh thigh  null 
+            chest: chest || null, 
+            arm: arm || null, 
+            waist: waist || null, 
+            thigh: thigh || null 
         });
         
-         按日期排序確保圖表正確
-        bodyStats.sort((a, b) = new Date(a.date) - new Date(b.date));
-        localStorage.setItem('f3_bodyStats', JSON.stringify(bodyStats));  儲存到 LocalStorage
+        // 按日期排序確保圖表正確
+        bodyStats.sort((a, b) => new Date(a.date) - new Date(b.date));
+        localStorage.setItem('f3_bodyStats', JSON.stringify(bodyStats)); // 儲存到 LocalStorage
 
         document.getElementById('b-chest').value = '';
         document.getElementById('b-arm').value = '';
@@ -242,80 +242,80 @@ script
     function renderTables() {
         const wTbody = document.getElementById('workout-table-body');
         wTbody.innerHTML = '';
-        workouts.forEach(w = {
-            wTbody.innerHTML += `trtd${w.date}tdtd${w.exercise}tdtd${w.weight}tdtd${w.reps}tdtd${w.sets}tdtr`;
+        workouts.forEach(w => {
+            wTbody.innerHTML += `<tr><td>${w.date}</td><td>${w.exercise}</td><td>${w.weight}</td><td>${w.reps}</td><td>${w.sets}</td></tr>`;
         });
 
         const bTbody = document.getElementById('body-table-body');
         bTbody.innerHTML = '';
-        bodyStats.forEach(b = {
-            bTbody.innerHTML += `trtd${b.date}tdtd${b.chest  '-'}tdtd${b.arm  '-'}tdtd${b.waist  '-'}tdtd${b.thigh  '-'}tdtr`;
+        bodyStats.forEach(b => {
+            bTbody.innerHTML += `<tr><td>${b.date}</td><td>${b.chest || '-'}</td><td>${b.arm || '-'}</td><td>${b.waist || '-'}</td><td>${b.thigh || '-'}</td></tr>`;
         });
     }
 
     function updateChart() {
         const ctx = document.getElementById('growthChart').getContext('2d');
         
-         提取圖表數據
-        const labels = bodyStats.map(b = b.date);
-        const chestData = bodyStats.map(b = b.chest);
-        const armData = bodyStats.map(b = b.arm);
-        const waistData = bodyStats.map(b = b.waist);
-        const thighData = bodyStats.map(b = b.thigh);
+        // 提取圖表數據
+        const labels = bodyStats.map(b => b.date);
+        const chestData = bodyStats.map(b => b.chest);
+        const armData = bodyStats.map(b => b.arm);
+        const waistData = bodyStats.map(b => b.waist);
+        const thighData = bodyStats.map(b => b.thigh);
 
-         如果圖表已存在，先銷毀舊的
+        // 如果圖表已存在，先銷毀舊的
         if (growthChart) {
             growthChart.destroy();
         }
 
-         繪製新圖表
+        // 繪製新圖表
         growthChart = new Chart(ctx, {
-            type 'line',
-            data {
-                labels labels,
-                datasets [
-                    { label '胸圍 (cm)', data chestData, borderColor '#FF6384', tension 0.1, spanGaps true },
-                    { label '手臂圍 (cm)', data armData, borderColor '#36A2EB', tension 0.1, spanGaps true },
-                    { label '腰圍 (cm)', data waistData, borderColor '#FFCE56', tension 0.1, spanGaps true },
-                    { label '大腿圍 (cm)', data '#4BC0C0', tension 0.1, spanGaps true }
+            type: 'line',
+            data: {
+                labels: labels,
+                datasets: [
+                    { label: '胸圍 (cm)', data: chestData, borderColor: '#FF6384', tension: 0.1, spanGaps: true },
+                    { label: '手臂圍 (cm)', data: armData, borderColor: '#36A2EB', tension: 0.1, spanGaps: true },
+                    { label: '腰圍 (cm)', data: waistData, borderColor: '#FFCE56', tension: 0.1, spanGaps: true },
+                    { label: '大腿圍 (cm)', data: '#4BC0C0', tension: 0.1, spanGaps: true }
                 ]
             },
-            options {
-                responsive true,
-                maintainAspectRatio false,
-                plugins {
-                    title { display true, text '📈 肌肉圍度成長趨勢' }
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    title: { display: true, text: '📈 肌肉圍度成長趨勢' }
                 }
             }
         });
     }
 
     function calculateScore() {
-        const totalScore = (workouts.length  10) + (bodyStats.length  15);
+        const totalScore = (workouts.length * 10) + (bodyStats.length * 15);
         const resultDiv = document.getElementById('score-result');
         
-        let rank = , color = , message = ;
+        let rank = "", color = "", message = "";
 
         if (totalScore === 0) {
-            rank = 💤 健身新手; color = #9e9e9e; message = 萬事起頭難，今天就開始第一組訓練吧！;
-        } else if (totalScore = 30) {
-            rank = 🥉 青銅潛力股; color = #cd7f32; message = 好的開始！肌肉正在慢慢喚醒！;
-        } else if (totalScore = 80) {
-            rank = 🥈 白銀健體員; color = #C0C0C0; message = 表現不錯！你的自律超越了不少同學！;
-        } else if (totalScore = 150) {
-            rank = 🥇 黃金肌肉戰士; color = #FFD700; message = 太厲害了！你已經養成了良好的健身習慣！;
+            rank = "💤 健身新手"; color = "#9e9e9e"; message = "萬事起頭難，今天就開始第一組訓練吧！";
+        } else if (totalScore <= 30) {
+            rank = "🥉 青銅潛力股"; color = "#cd7f32"; message = "好的開始！肌肉正在慢慢喚醒！";
+        } else if (totalScore <= 80) {
+            rank = "🥈 白銀健體員"; color = "#C0C0C0"; message = "表現不錯！你的自律超越了不少同學！";
+        } else if (totalScore <= 150) {
+            rank = "🥇 黃金肌肉戰士"; color = "#FFD700"; message = "太厲害了！你已經養成了良好的健身習慣！";
         } else {
-            rank = 👑 中三級健身王者; color = #e51400; message = 無可挑剔的毅力！請受大家一拜！;
+            rank = "👑 中三級健身王者"; color = "#e51400"; message = "無可挑剔的毅力！請受大家一拜！";
         }
 
-        resultDiv.style.display = block;
+        resultDiv.style.display = "block";
         resultDiv.style.backgroundColor = color;
-        resultDiv.style.color = white;
-        resultDiv.innerHTML = `獲得分數：${totalScore} 分 br 目前稱號：${rank} br span style=font-size 0.7em;${message}span`;
+        resultDiv.style.color = "white";
+        resultDiv.innerHTML = `獲得分數：${totalScore} 分 <br> 目前稱號：${rank} <br> <span style="font-size: 0.7em;">${message}</span>`;
     }
 
     function clearData() {
-        if(confirm(⚠️ 確定要清除所有紀錄嗎？這個動作無法復原喔！)) {
+        if(confirm("⚠️ 確定要清除所有紀錄嗎？這個動作無法復原喔！")) {
             localStorage.removeItem('f3_workouts');
             localStorage.removeItem('f3_bodyStats');
             workouts = [];
@@ -323,10 +323,10 @@ script
             renderTables();
             updateChart();
             document.getElementById('score-result').style.display = 'none';
-            alert(紀錄已全部清除，重新開始你的旅程吧！);
+            alert("紀錄已全部清除，重新開始你的旅程吧！");
         }
     }
-script
+</script>
 
-body
-html
+</body>
+</html>
